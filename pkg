@@ -1,0 +1,8 @@
+#! /bin/bash
+for i in $@; do
+    cd $i && \
+    for x in `ls | grep .pkg.tar.xz`; do
+        pacman -U $x
+    done
+    cd ..
+done
