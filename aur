@@ -1,6 +1,6 @@
 #! /bin/bash
 for i in $@; do
-    wget https://aur.archlinux.org/cgit/aur.git/snapshot/$i.tar.gz
-    tar -xf $i.tar.gz
+    wget https://aur.archlinux.org/cgit/aur.git/snapshot/$i.tar.gz && \
+    tar -xf $i.tar.gz && \
     cd $i && makepkg &
 done
